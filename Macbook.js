@@ -57,15 +57,22 @@ function updateTotalPrice(){
 // Apply promo code
 
 
-// document.getElementById("apply-btn").addEventListener("click", function(){
-//     var totalCost2 = parseFloat(document.getElementById("total-cost2"));
-//     var totalCost2value = parseFloat(document.getElementById("total-cost2").innerText);
-//  var promoCodeInput = document.getElementById("promo-code-input");
-// var promoCodeInputValue = promoCodeInput.value;
-//     if(promoCodeInputValue == "partha"){
-//         var updated =totalCost2value +"80";
-//         totalCost2.innerText = updated;
-//     }
-//     console.log(promoCodeInputValue)
-// })
+document.getElementById("apply-btn").addEventListener("click", function(){
+    var totalCost2 = document.getElementById("total-cost2");
+    
+    var totalCost2value = parseFloat(totalCost2.innerText);
+ var promoCodeInput = document.getElementById("promo-code-input");
+var promoCodeInputValue = promoCodeInput.value;
+var applyBtn = document.getElementById("apply-btn");
+    if(promoCodeInputValue == "partha"){
+        var updated =totalCost2value * 0.8;
+        totalCost2.innerText = updated;
+        applyBtn.setAttribute("disabled", true);
+       
+    }
+    else{
+        alert("please input valid promo code");
+    }
+    
+})
 
